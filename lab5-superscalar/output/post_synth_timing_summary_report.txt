@@ -1,0 +1,1046 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Mon Apr 25 21:50:59 2022
+| Host         : big09.seas.upenn.edu running 64-bit openSUSE Leap 15.3
+| Command      : report_timing_summary -file ./output/post_synth_timing_summary_report.txt
+| Design       : lc4_system
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+-------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 6 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 15 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     -0.678       -0.678                      1                 2937        0.083        0.000                      0                 2937        3.000        0.000                       0                   836  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                                 Waveform(ns)       Period(ns)      Frequency(MHz)
+-----                                 ------------       ----------      --------------
+CLOCK_100MHz                          {0.000 5.000}      10.000          100.000         
+  clk_processor_design_1_clk_wiz_0_0  {0.000 28.625}     57.250          17.467          
+  clk_vga_design_1_clk_wiz_0_0        {0.000 20.000}     40.000          25.000          
+  clk_vga_inv_design_1_clk_wiz_0_0    {20.000 40.000}    40.000          25.000          
+  clkfbout_design_1_clk_wiz_0_0       {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                                     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                                     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+CLOCK_100MHz                                                                                                                                                                            3.000        0.000                       0                     1  
+  clk_processor_design_1_clk_wiz_0_0       -0.678       -0.678                      1                 2751        0.137        0.000                      0                 2751       28.125        0.000                       0                   778  
+  clk_vga_design_1_clk_wiz_0_0                                                                                                                                                         37.424        0.000                       0                    10  
+  clk_vga_inv_design_1_clk_wiz_0_0         35.808        0.000                      0                   62        0.083        0.000                      0                   62       19.020        0.000                       0                    44  
+  clkfbout_design_1_clk_wiz_0_0                                                                                                                                                         7.845        0.000                       0                     3  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock                        To Clock                              WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                        --------                              -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+clk_vga_inv_design_1_clk_wiz_0_0  clk_vga_design_1_clk_wiz_0_0           16.660        0.000                      0                  112       19.978        0.000                      0                  112  
+clk_vga_design_1_clk_wiz_0_0      clk_vga_inv_design_1_clk_wiz_0_0       16.307        0.000                      0                   12       20.461        0.000                      0                   12  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  CLOCK_100MHz
+  To Clock:  CLOCK_100MHz
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         CLOCK_100MHz
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { CLOCK_100MHz }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     MMCME2_ADV/CLKIN1  n/a            1.249         10.000      8.751                mmcm0/mmcm_adv_inst/CLKIN1
+Max Period        n/a     MMCME2_ADV/CLKIN1  n/a            100.000       10.000      90.000               mmcm0/mmcm_adv_inst/CLKIN1
+Low Pulse Width   Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000                mmcm0/mmcm_adv_inst/CLKIN1
+High Pulse Width  Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000                mmcm0/mmcm_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_processor_design_1_clk_wiz_0_0
+  To Clock:  clk_processor_design_1_clk_wiz_0_0
+
+Setup :            1  Failing Endpoint ,  Worst Slack       -0.678ns,  Total Violation       -0.678ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.137ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       28.125ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -0.678ns  (required time - arrival time)
+  Source:                 proc_inst/memory_nzp_we_register_A/state_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_processor_design_1_clk_wiz_0_0  {rise@0.000ns fall@28.625ns period=57.250ns})
+  Destination:            proc_inst/memory_nzp_register_B/state_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_processor_design_1_clk_wiz_0_0  {rise@0.000ns fall@28.625ns period=57.250ns})
+  Path Group:             clk_processor_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            57.250ns  (clk_processor_design_1_clk_wiz_0_0 rise@57.250ns - clk_processor_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        57.730ns  (logic 16.559ns (28.684%)  route 41.171ns (71.316%))
+  Logic Levels:           78  (CARRY4=32 LUT2=1 LUT3=2 LUT4=3 LUT5=15 LUT6=25)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.229ns = ( 55.021 - 57.250 ) 
+    Source Clock Delay      (SCD):    -1.554ns
+    Clock Pessimism Removal (CPR):    0.531ns
+  Clock Uncertainty:      0.097ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.180ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_processor_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000     0.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.490     1.490 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.584     2.074    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -5.113    -3.038 r  mmcm0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.800    -2.239    mmcm0/clk_processor_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.101    -2.138 r  mmcm0/clkout1_buf/O
+                         net (fo=776, unplaced)       0.584    -1.554    proc_inst/memory_nzp_we_register_A/clk_processor
+                         FDRE                                         r  proc_inst/memory_nzp_we_register_A/state_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.478    -1.076 r  proc_inst/memory_nzp_we_register_A/state_reg[0]/Q
+                         net (fo=9, unplaced)         0.782    -0.294    proc_inst/memory_nzp_we_register_B/state_reg[0]_6
+                         LUT4 (Prop_lut4_I1_O)        0.295     0.001 f  proc_inst/memory_nzp_we_register_B/state[15]_i_13__3/O
+                         net (fo=1, unplaced)         0.449     0.450    proc_inst/memory_nzp_we_register_B/state[15]_i_13__3_n_0
+                         LUT6 (Prop_lut6_I5_O)        0.124     0.574 f  proc_inst/memory_nzp_we_register_B/state[15]_i_7__3/O
+                         net (fo=2, unplaced)         0.913     1.487    proc_inst/execute_is_control_insn_register_A/state_reg[0]_8
+                         LUT6 (Prop_lut6_I2_O)        0.124     1.611 r  proc_inst/execute_is_control_insn_register_A/state[15]_i_4__11/O
+                         net (fo=97, unplaced)        0.548     2.159    proc_inst/execute_r2sel_register_B/state_reg[0]_21
+                         LUT5 (Prop_lut5_I3_O)        0.124     2.283 f  proc_inst/execute_r2sel_register_B/mul_out_i_79/O
+                         net (fo=1, unplaced)         0.449     2.732    proc_inst/execute_r2sel_register_B/mul_out_i_79_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.124     2.856 r  proc_inst/execute_r2sel_register_B/mul_out_i_35/O
+                         net (fo=17, unplaced)        0.475     3.331    proc_inst/execute_r2sel_register_B/mul_out_i_35_n_0
+                         LUT2 (Prop_lut2_I0_O)        0.124     3.455 f  proc_inst/execute_r2sel_register_B/mul_out_i_34/O
+                         net (fo=18, unplaced)        0.506     3.961    proc_inst/execute_r2sel_register_B/mul_out_i_34_n_0
+                         LUT6 (Prop_lut6_I5_O)        0.124     4.085 f  proc_inst/execute_r2sel_register_B/mul_out_i_49/O
+                         net (fo=1, unplaced)         0.449     4.534    proc_inst/execute_r2sel_register_B/mul_out_i_49_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.124     4.658 f  proc_inst/execute_r2sel_register_B/mul_out_i_15/O
+                         net (fo=60, unplaced)        0.506     5.164    proc_inst/execute_r2sel_register_B/state_reg[1]_0
+                         LUT3 (Prop_lut3_I0_O)        0.150     5.314 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_1__30/O
+                         net (fo=1, unplaced)         0.000     5.314    proc_inst/alu_B/div/genblk1[0].div/DI[0]
+                         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.576     5.890 r  proc_inst/alu_B/div/genblk1[0].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009     5.899    proc_inst/alu_B/div/genblk1[0].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     6.016 r  proc_inst/alu_B/div/genblk1[0].div/o_remainder1_carry__0/CO[3]
+                         net (fo=96, unplaced)        1.017     7.033    proc_inst/execute_r2sel_register_B/CO[0]
+                         LUT3 (Prop_lut3_I1_O)        0.124     7.157 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_11__2/O
+                         net (fo=7, unplaced)         0.484     7.641    proc_inst/execute_r2sel_register_B/alu_B/div/remainders[1]_43[0]
+                         LUT4 (Prop_lut4_I1_O)        0.116     7.757 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_4__16/O
+                         net (fo=1, unplaced)         0.000     7.757    proc_inst/alu_B/div/genblk1[1].div/state_reg[7][0]
+                         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.576     8.333 r  proc_inst/alu_B/div/genblk1[1].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009     8.342    proc_inst/alu_B/div/genblk1[1].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.459 r  proc_inst/alu_B/div/genblk1[1].div/o_remainder1_carry__0/CO[3]
+                         net (fo=68, unplaced)        1.008     9.467    proc_inst/execute_r2sel_register_B/state_reg[15]_11[0]
+                         LUT4 (Prop_lut4_I1_O)        0.124     9.591 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_13__2/O
+                         net (fo=2, unplaced)         0.460    10.051    proc_inst/execute_r2sel_register_B/alu_B/div/remainders[2]_42[2]
+                         LUT6 (Prop_lut6_I1_O)        0.124    10.175 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__16/O
+                         net (fo=1, unplaced)         0.639    10.814    proc_inst/alu_B/div/genblk1[2].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    11.334 r  proc_inst/alu_B/div/genblk1[2].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    11.343    proc_inst/alu_B/div/genblk1[2].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    11.460 r  proc_inst/alu_B/div/genblk1[2].div/o_remainder1_carry__0/CO[3]
+                         net (fo=39, unplaced)        0.994    12.454    proc_inst/execute_r2sel_register_B/state_reg[15]_23[0]
+                         LUT6 (Prop_lut6_I1_O)        0.124    12.578 r  proc_inst/execute_r2sel_register_B/o_remainder0_carry__0_i_4__15/O
+                         net (fo=9, unplaced)         0.490    13.068    proc_inst/execute_r2sel_register_B/remainders[3]_41[1]
+                         LUT6 (Prop_lut6_I4_O)        0.124    13.192 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_2__18/O
+                         net (fo=1, unplaced)         0.474    13.666    proc_inst/alu_B/div/genblk1[3].div/state_reg[7]_0[2]
+                         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.404    14.070 r  proc_inst/alu_B/div/genblk1[3].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    14.079    proc_inst/alu_B/div/genblk1[3].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    14.196 r  proc_inst/alu_B/div/genblk1[3].div/o_remainder1_carry__0/CO[3]
+                         net (fo=66, unplaced)        1.007    15.203    proc_inst/alu_B/div/genblk1[3].div/state_reg[12][0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    15.327 r  proc_inst/alu_B/div/genblk1[3].div/o_remainder0_carry_i_1__16/O
+                         net (fo=4, unplaced)         0.473    15.800    proc_inst/execute_r2sel_register_B/state_reg[14]_21[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    15.924 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__19/O
+                         net (fo=1, unplaced)         0.639    16.563    proc_inst/alu_B/div/genblk1[4].div/state_reg[7]_0[1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    17.083 r  proc_inst/alu_B/div/genblk1[4].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    17.092    proc_inst/alu_B/div/genblk1[4].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    17.209 r  proc_inst/alu_B/div/genblk1[4].div/o_remainder1_carry__0/CO[3]
+                         net (fo=54, unplaced)        1.002    18.211    proc_inst/alu_B/div/genblk1[3].div/state_reg[15]_1[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    18.335 r  proc_inst/alu_B/div/genblk1[3].div/o_remainder0_carry_i_1__17/O
+                         net (fo=8, unplaced)         0.487    18.822    proc_inst/execute_r2sel_register_B/state_reg[11]_16[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    18.946 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__20/O
+                         net (fo=1, unplaced)         0.639    19.585    proc_inst/alu_B/div/genblk1[5].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    20.105 r  proc_inst/alu_B/div/genblk1[5].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    20.114    proc_inst/alu_B/div/genblk1[5].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    20.231 r  proc_inst/alu_B/div/genblk1[5].div/o_remainder1_carry__0/CO[3]
+                         net (fo=60, unplaced)        1.005    21.236    proc_inst/alu_B/div/genblk1[3].div/CO[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    21.360 r  proc_inst/alu_B/div/genblk1[3].div/o_remainder0_carry_i_1__18/O
+                         net (fo=8, unplaced)         0.487    21.847    proc_inst/execute_r2sel_register_B/state_reg[10]_16[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    21.971 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__21/O
+                         net (fo=1, unplaced)         0.639    22.610    proc_inst/alu_B/div/genblk1[6].div/state_reg[7]_2[1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    23.130 r  proc_inst/alu_B/div/genblk1[6].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    23.139    proc_inst/alu_B/div/genblk1[6].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    23.256 r  proc_inst/alu_B/div/genblk1[6].div/o_remainder1_carry__0/CO[3]
+                         net (fo=62, unplaced)        1.006    24.262    proc_inst/alu_B/div/genblk1[6].div/state_reg[9][0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    24.386 r  proc_inst/alu_B/div/genblk1[6].div/o_remainder0_carry_i_1__19/O
+                         net (fo=8, unplaced)         0.487    24.873    proc_inst/execute_r2sel_register_B/state_reg[9]_15[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    24.997 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__22/O
+                         net (fo=1, unplaced)         0.639    25.636    proc_inst/alu_B/div/genblk1[7].div/state_reg[7]_0[1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    26.156 r  proc_inst/alu_B/div/genblk1[7].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    26.165    proc_inst/alu_B/div/genblk1[7].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    26.282 r  proc_inst/alu_B/div/genblk1[7].div/o_remainder1_carry__0/CO[3]
+                         net (fo=61, unplaced)        1.005    27.287    proc_inst/alu_B/div/genblk1[3].div/state_reg[15]_3[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    27.411 r  proc_inst/alu_B/div/genblk1[3].div/o_remainder0_carry_i_1__20/O
+                         net (fo=8, unplaced)         0.487    27.898    proc_inst/execute_r2sel_register_B/state_reg[8]_17[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    28.022 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__23/O
+                         net (fo=1, unplaced)         0.639    28.661    proc_inst/alu_B/div/genblk1[8].div/state_reg[7]_0[1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    29.181 r  proc_inst/alu_B/div/genblk1[8].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    29.190    proc_inst/alu_B/div/genblk1[8].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    29.307 r  proc_inst/alu_B/div/genblk1[8].div/o_remainder1_carry__0/CO[3]
+                         net (fo=58, unplaced)        1.004    30.311    proc_inst/alu_B/div/genblk1[6].div/state_reg[15]_2[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    30.435 r  proc_inst/alu_B/div/genblk1[6].div/o_remainder0_carry_i_1__21/O
+                         net (fo=9, unplaced)         0.490    30.925    proc_inst/execute_r2sel_register_B/state_reg[8]_15[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    31.049 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__24/O
+                         net (fo=1, unplaced)         0.639    31.688    proc_inst/alu_B/div/genblk1[9].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    32.208 r  proc_inst/alu_B/div/genblk1[9].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    32.217    proc_inst/alu_B/div/genblk1[9].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    32.334 r  proc_inst/alu_B/div/genblk1[9].div/o_remainder1_carry__0/CO[3]
+                         net (fo=58, unplaced)        1.004    33.338    proc_inst/alu_B/div/genblk1[6].div/state_reg[15]_3[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    33.462 r  proc_inst/alu_B/div/genblk1[6].div/o_remainder0_carry_i_1__22/O
+                         net (fo=9, unplaced)         0.490    33.952    proc_inst/execute_r2sel_register_B/state_reg[7]_13[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    34.076 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__25/O
+                         net (fo=1, unplaced)         0.639    34.715    proc_inst/alu_B/div/genblk1[10].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    35.235 r  proc_inst/alu_B/div/genblk1[10].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    35.244    proc_inst/alu_B/div/genblk1[10].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.361 r  proc_inst/alu_B/div/genblk1[10].div/o_remainder1_carry__0/CO[3]
+                         net (fo=64, unplaced)        1.006    36.367    proc_inst/alu_B/div/genblk1[10].div/CO[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    36.491 r  proc_inst/alu_B/div/genblk1[10].div/o_remainder0_carry_i_1__23/O
+                         net (fo=9, unplaced)         0.490    36.981    proc_inst/execute_r2sel_register_B/state_reg[5]_18[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    37.105 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__26/O
+                         net (fo=1, unplaced)         0.639    37.744    proc_inst/alu_B/div/genblk1[11].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    38.264 r  proc_inst/alu_B/div/genblk1[11].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    38.273    proc_inst/alu_B/div/genblk1[11].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    38.390 r  proc_inst/alu_B/div/genblk1[11].div/o_remainder1_carry__0/CO[3]
+                         net (fo=62, unplaced)        1.006    39.396    proc_inst/alu_B/div/genblk1[6].div/state_reg[15]_4[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    39.520 r  proc_inst/alu_B/div/genblk1[6].div/o_remainder0_carry_i_1__24/O
+                         net (fo=9, unplaced)         0.490    40.010    proc_inst/execute_r2sel_register_B/state_reg[4]_12[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    40.134 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__27/O
+                         net (fo=1, unplaced)         0.639    40.773    proc_inst/alu_B/div/genblk1[12].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    41.293 r  proc_inst/alu_B/div/genblk1[12].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    41.302    proc_inst/alu_B/div/genblk1[12].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    41.419 r  proc_inst/alu_B/div/genblk1[12].div/o_remainder1_carry__0/CO[3]
+                         net (fo=64, unplaced)        1.006    42.425    proc_inst/alu_B/div/genblk1[10].div/state_reg[15]_2[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    42.549 r  proc_inst/alu_B/div/genblk1[10].div/o_remainder0_carry_i_1__25/O
+                         net (fo=9, unplaced)         0.490    43.039    proc_inst/execute_r2sel_register_B/state_reg[11]_17[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    43.163 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__28/O
+                         net (fo=1, unplaced)         0.639    43.802    proc_inst/alu_B/div/genblk1[13].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    44.322 r  proc_inst/alu_B/div/genblk1[13].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    44.331    proc_inst/alu_B/div/genblk1[13].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    44.448 r  proc_inst/alu_B/div/genblk1[13].div/o_remainder1_carry__0/CO[3]
+                         net (fo=67, unplaced)        1.008    45.456    proc_inst/alu_B/div/genblk1[10].div/state_reg[15]_3[0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    45.580 r  proc_inst/alu_B/div/genblk1[10].div/o_remainder0_carry_i_1__26/O
+                         net (fo=8, unplaced)         0.487    46.067    proc_inst/execute_r2sel_register_B/state_reg[11]_14[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    46.191 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__29/O
+                         net (fo=1, unplaced)         0.639    46.830    proc_inst/alu_B/div/genblk1[14].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    47.350 r  proc_inst/alu_B/div/genblk1[14].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    47.359    proc_inst/alu_B/div/genblk1[14].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    47.476 r  proc_inst/alu_B/div/genblk1[14].div/o_remainder1_carry__0/CO[3]
+                         net (fo=58, unplaced)        1.004    48.480    proc_inst/alu_B/div/genblk1[14].div/state_reg[1][0]
+                         LUT5 (Prop_lut5_I1_O)        0.124    48.604 r  proc_inst/alu_B/div/genblk1[14].div/o_remainder0_carry_i_1__27/O
+                         net (fo=4, unplaced)         0.473    49.077    proc_inst/execute_r2sel_register_B/state_reg[11]_13[0]
+                         LUT6 (Prop_lut6_I1_O)        0.124    49.201 r  proc_inst/execute_r2sel_register_B/o_remainder1_carry_i_3__30/O
+                         net (fo=1, unplaced)         0.639    49.840    proc_inst/alu_B/div/genblk1[15].div/state_reg[7][1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    50.360 r  proc_inst/alu_B/div/genblk1[15].div/o_remainder1_carry/CO[3]
+                         net (fo=1, unplaced)         0.009    50.369    proc_inst/alu_B/div/genblk1[15].div/o_remainder1_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    50.486 r  proc_inst/alu_B/div/genblk1[15].div/o_remainder1_carry__0/CO[3]
+                         net (fo=22, unplaced)        0.980    51.466    proc_inst/execute_instruction_register_B/state_reg[15]_6[0]
+                         LUT6 (Prop_lut6_I3_O)        0.124    51.590 r  proc_inst/execute_instruction_register_B/state[0]_i_76/O
+                         net (fo=1, unplaced)         0.449    52.039    proc_inst/execute_instruction_register_B/state[0]_i_76_n_0
+                         LUT6 (Prop_lut6_I5_O)        0.124    52.163 r  proc_inst/execute_instruction_register_B/state[0]_i_47__0/O
+                         net (fo=1, unplaced)         0.449    52.612    proc_inst/execute_instruction_register_B/state[0]_i_47__0_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.124    52.736 r  proc_inst/execute_instruction_register_B/state[0]_i_13/O
+                         net (fo=1, unplaced)         0.449    53.185    proc_inst/execute_instruction_register_B/state[0]_i_13_n_0
+                         LUT6 (Prop_lut6_I2_O)        0.124    53.309 r  proc_inst/execute_instruction_register_B/state[0]_i_3__5/O
+                         net (fo=2, unplaced)         0.460    53.769    proc_inst/execute_instruction_register_B/state[0]_i_3__5_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.124    53.893 r  proc_inst/execute_instruction_register_B/state[0]_i_1__34/O
+                         net (fo=2, unplaced)         0.913    54.806    proc_inst/execute_instruction_register_B/state_reg[0]_0
+                         LUT6 (Prop_lut6_I0_O)        0.124    54.930 r  proc_inst/execute_instruction_register_B/state[1]_i_4__6/O
+                         net (fo=2, unplaced)         1.122    56.052    proc_inst/execute_instruction_register_B/state[1]_i_4__6_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.124    56.176 r  proc_inst/execute_instruction_register_B/state[0]_i_1__33/O
+                         net (fo=1, unplaced)         0.000    56.176    proc_inst/memory_nzp_register_B/execute_nzp_bits_B[0]
+                         FDRE                                         r  proc_inst/memory_nzp_register_B/state_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_processor_design_1_clk_wiz_0_0 rise edge)
+                                                     57.250    57.250 r  
+    Y9                                                0.000    57.250 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    57.250    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.420    58.670 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.439    59.109    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -5.378    53.731 r  mmcm0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.760    54.491    mmcm0/clk_processor_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.091    54.582 r  mmcm0/clkout1_buf/O
+                         net (fo=776, unplaced)       0.439    55.021    proc_inst/memory_nzp_register_B/clk_processor
+                         FDRE                                         r  proc_inst/memory_nzp_register_B/state_reg[0]/C
+                         clock pessimism              0.531    55.551    
+                         clock uncertainty           -0.097    55.455    
+                         FDRE (Setup_fdre_C_D)        0.044    55.499    proc_inst/memory_nzp_register_B/state_reg[0]
+  -------------------------------------------------------------------
+                         required time                         55.499    
+                         arrival time                         -56.176    
+  -------------------------------------------------------------------
+                         slack                                 -0.678    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.137ns  (arrival time - required time)
+  Source:                 state_reg[10]_i_2__2/C
+                            (rising edge-triggered cell FDRE clocked by clk_processor_design_1_clk_wiz_0_0  {rise@0.000ns fall@28.625ns period=57.250ns})
+  Destination:            proc_inst/writeback_D_register_A/state_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by clk_processor_design_1_clk_wiz_0_0  {rise@0.000ns fall@28.625ns period=57.250ns})
+  Path Group:             clk_processor_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_processor_design_1_clk_wiz_0_0 rise@0.000ns - clk_processor_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.381ns  (logic 0.245ns (64.350%)  route 0.136ns (35.650%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -1.062ns
+    Source Clock Delay      (SCD):    -0.927ns
+    Clock Pessimism Removal (CPR):    -0.280ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_processor_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000     0.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.258     0.258 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.114     0.372    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.776    -1.404 r  mmcm0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.337    -1.067    mmcm0/clk_processor_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.026    -1.041 r  mmcm0/clkout1_buf/O
+                         net (fo=776, unplaced)       0.114    -0.927    clock_processor
+                         FDRE                                         r  state_reg[10]_i_2__2/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.147    -0.780 r  state_reg[10]_i_2__2/Q
+                         net (fo=2, unplaced)         0.136    -0.644    memory/memory/state_reg[10]_i_2__2_0
+                         LUT3 (Prop_lut3_I2_O)        0.098    -0.546 r  memory/memory/state[10]_i_1__16/O
+                         net (fo=1, unplaced)         0.000    -0.546    proc_inst/writeback_D_register_A/dmem_mout[4]
+                         FDRE                                         r  proc_inst/writeback_D_register_A/state_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_processor_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000     0.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.446     0.446 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.259     0.705    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.410    -1.705 r  mmcm0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.355    -1.350    mmcm0/clk_processor_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.029    -1.321 r  mmcm0/clkout1_buf/O
+                         net (fo=776, unplaced)       0.259    -1.062    proc_inst/writeback_D_register_A/clk_processor
+                         FDRE                                         r  proc_inst/writeback_D_register_A/state_reg[10]/C
+                         clock pessimism              0.280    -0.782    
+                         FDRE (Hold_fdre_C_D)         0.099    -0.683    proc_inst/writeback_D_register_A/state_reg[10]
+  -------------------------------------------------------------------
+                         required time                          0.683    
+                         arrival time                          -0.546    
+  -------------------------------------------------------------------
+                         slack                                  0.137    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_processor_design_1_clk_wiz_0_0
+Waveform(ns):       { 0.000 28.625 }
+Period(ns):         57.250
+Sources:            { mmcm0/mmcm_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            3.363         57.250      53.887               memory/memory/IDRAM_reg_0_2/CLKARDCLK
+Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       57.250      156.110              mmcm0/mmcm_adv_inst/CLKOUT0
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         28.625      28.125               fake_kbd_inst/kbdr_reg/state_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         28.625      28.125               fake_kbd_inst/kbdr_reg/state_reg[0]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_vga_design_1_clk_wiz_0_0
+  To Clock:  clk_vga_design_1_clk_wiz_0_0
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack       37.424ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_vga_design_1_clk_wiz_0_0
+Waveform(ns):       { 0.000 20.000 }
+Period(ns):         40.000
+Sources:            { mmcm0/mmcm_adv_inst/CLKOUT1 }
+
+Check Type  Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period  n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         40.000      37.424               memory/memory/VRAM_reg_0/CLKBWRCLK
+Max Period  n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       40.000      173.360              mmcm0/mmcm_adv_inst/CLKOUT1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_vga_inv_design_1_clk_wiz_0_0
+  To Clock:  clk_vga_inv_design_1_clk_wiz_0_0
+
+Setup :            0  Failing Endpoints,  Worst Slack       35.808ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.083ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       19.020ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             35.808ns  (required time - arrival time)
+  Source:                 vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Destination:            vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Path Group:             clk_vga_inv_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk_vga_inv_design_1_clk_wiz_0_0 rise@60.000ns - clk_vga_inv_design_1_clk_wiz_0_0 rise@20.000ns)
+  Data Path Delay:        3.399ns  (logic 0.897ns (26.390%)  route 2.502ns (73.610%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.229ns = ( 57.771 - 60.000 ) 
+    Source Clock Delay      (SCD):    -1.554ns = ( 18.446 - 20.000 ) 
+    Clock Pessimism Removal (CPR):    0.531ns
+  Clock Uncertainty:      0.091ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.168ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     20.000    20.000 r  
+    Y9                                                0.000    20.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    20.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.490    21.490 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.584    22.074    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -5.113    16.962 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.800    17.761    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.101    17.862 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.584    18.446    vga_cntrl_inst/svga_t_g/clk_vga_inv
+                         FDRE                                         r  vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.478    18.924 f  vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[6]/Q
+                         net (fo=15, unplaced)        1.018    19.942    vga_cntrl_inst/svga_t_g/Q[4]
+                         LUT6 (Prop_lut6_I0_O)        0.295    20.237 r  vga_cntrl_inst/svga_t_g/LINE_COUNT[9]_i_4/O
+                         net (fo=1, unplaced)         0.665    20.902    vga_cntrl_inst/svga_t_g/LINE_COUNT[9]_i_4_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.124    21.026 r  vga_cntrl_inst/svga_t_g/LINE_COUNT[9]_i_1/O
+                         net (fo=10, unplaced)        0.819    21.845    vga_cntrl_inst/svga_t_g/LINE_COUNT0
+                         FDRE                                         r  vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     60.000    60.000 f  
+    Y9                                                0.000    60.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    60.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.420    61.420 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.439    61.859    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -5.378    56.481 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.760    57.241    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.091    57.332 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.439    57.771    vga_cntrl_inst/svga_t_g/clk_vga_inv
+                         FDRE                                         r  vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[0]/C
+                         clock pessimism              0.531    58.301    
+                         clock uncertainty           -0.091    58.210    
+                         FDRE (Setup_fdre_C_R)       -0.557    57.653    vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[0]
+  -------------------------------------------------------------------
+                         required time                         57.653    
+                         arrival time                         -21.845    
+  -------------------------------------------------------------------
+                         slack                                 35.808    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.083ns  (arrival time - required time)
+  Source:                 vga_cntrl_inst/svga_t_g/h_synch_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Destination:            vga_cntrl_inst/svga_t_g/H_SYNCH_DELAY_reg_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Path Group:             clk_vga_inv_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_vga_inv_design_1_clk_wiz_0_0 rise@20.000ns - clk_vga_inv_design_1_clk_wiz_0_0 rise@20.000ns)
+  Data Path Delay:        0.292ns  (logic 0.147ns (50.269%)  route 0.145ns (49.730%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -1.062ns = ( 18.938 - 20.000 ) 
+    Source Clock Delay      (SCD):    -0.927ns = ( 19.073 - 20.000 ) 
+    Clock Pessimism Removal (CPR):    -0.280ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     20.000    20.000 r  
+    Y9                                                0.000    20.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    20.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.258    20.258 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.114    20.372    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -1.776    18.596 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.337    18.933    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.026    18.959 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.114    19.073    vga_cntrl_inst/svga_t_g/clk_vga_inv
+                         FDRE                                         r  vga_cntrl_inst/svga_t_g/h_synch_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.147    19.220 r  vga_cntrl_inst/svga_t_g/h_synch_reg/Q
+                         net (fo=2, unplaced)         0.145    19.366    vga_cntrl_inst/svga_t_g/h_synch
+                         SRL16E                                       r  vga_cntrl_inst/svga_t_g/H_SYNCH_DELAY_reg_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     20.000    20.000 f  
+    Y9                                                0.000    20.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    20.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.446    20.446 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.259    20.705    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -2.410    18.295 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.355    18.650    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.029    18.679 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.259    18.938    vga_cntrl_inst/svga_t_g/clk_vga_inv
+                         SRL16E                                       r  vga_cntrl_inst/svga_t_g/H_SYNCH_DELAY_reg_srl2/CLK
+                         clock pessimism              0.280    19.218    
+                         SRL16E (Hold_srl16e_CLK_D)
+                                                      0.064    19.282    vga_cntrl_inst/svga_t_g/H_SYNCH_DELAY_reg_srl2
+  -------------------------------------------------------------------
+                         required time                        -19.282    
+                         arrival time                          19.366    
+  -------------------------------------------------------------------
+                         slack                                  0.083    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_vga_inv_design_1_clk_wiz_0_0
+Waveform(ns):       { 20.000 40.000 }
+Period(ns):         40.000
+Sources:            { mmcm0/mmcm_adv_inst/CLKOUT1B }
+
+Check Type        Corner  Lib Pin              Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     BUFG/I               n/a            2.155         40.000      37.845               mmcm0/clkout3_buf/I
+Max Period        n/a     MMCME2_ADV/CLKOUT1B  n/a            213.360       40.000      173.360              mmcm0/mmcm_adv_inst/CLKOUT1B
+Low Pulse Width   Slow    SRL16E/CLK           n/a            0.980         20.000      19.020               vga_cntrl_inst/svga_t_g/H_SYNCH_DELAY_reg_srl2/CLK
+High Pulse Width  Fast    SRL16E/CLK           n/a            0.980         20.000      19.020               vga_cntrl_inst/svga_t_g/H_SYNCH_DELAY_reg_srl2/CLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clkfbout_design_1_clk_wiz_0_0
+  To Clock:  clkfbout_design_1_clk_wiz_0_0
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        7.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clkfbout_design_1_clk_wiz_0_0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { mmcm0/mmcm_adv_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period  n/a     BUFG/I              n/a            2.155         10.000      7.845                mmcm0/clkf_buf/I
+Max Period  n/a     MMCME2_ADV/CLKFBIN  n/a            100.000       10.000      90.000               mmcm0/mmcm_adv_inst/CLKFBIN
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_vga_inv_design_1_clk_wiz_0_0
+  To Clock:  clk_vga_design_1_clk_wiz_0_0
+
+Setup :            0  Failing Endpoints,  Worst Slack       16.660ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack       19.978ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             16.660ns  (required time - arrival time)
+  Source:                 vga_cntrl_inst/svga_t_g/PIXEL_COUNT_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Destination:            memory/memory/VRAM_reg_0/ADDRBWRADDR[7]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_vga_design_1_clk_wiz_0_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_vga_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_vga_design_1_clk_wiz_0_0 rise@40.000ns - clk_vga_inv_design_1_clk_wiz_0_0 rise@20.000ns)
+  Data Path Delay:        2.368ns  (logic 0.773ns (32.648%)  route 1.595ns (67.353%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.195ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.229ns = ( 37.771 - 40.000 ) 
+    Source Clock Delay      (SCD):    -1.554ns = ( 18.446 - 20.000 ) 
+    Clock Pessimism Removal (CPR):    0.481ns
+  Clock Uncertainty:      0.211ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.168ns
+    Phase Error              (PE):    0.120ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     20.000    20.000 r  
+    Y9                                                0.000    20.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    20.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.490    21.490 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.584    22.074    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -5.113    16.962 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.800    17.761    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.101    17.862 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.584    18.446    vga_cntrl_inst/svga_t_g/clk_vga_inv
+                         FDRE                                         r  vga_cntrl_inst/svga_t_g/PIXEL_COUNT_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.478    18.924 r  vga_cntrl_inst/svga_t_g/PIXEL_COUNT_reg[6]/Q
+                         net (fo=16, unplaced)        0.795    19.719    vga_cntrl_inst/svga_t_g/pixel_count[6]
+                         LUT3 (Prop_lut3_I0_O)        0.295    20.014 r  vga_cntrl_inst/svga_t_g/VRAM_reg_0_i_8/O
+                         net (fo=8, unplaced)         0.800    20.814    memory/memory/vaddr[6]
+                         RAMB36E1                                     r  memory/memory/VRAM_reg_0/ADDRBWRADDR[7]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_vga_design_1_clk_wiz_0_0 rise edge)
+                                                     40.000    40.000 r  
+    Y9                                                0.000    40.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    40.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.420    41.420 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.439    41.859    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -5.378    36.481 r  mmcm0/mmcm_adv_inst/CLKOUT1
+                         net (fo=1, unplaced)         0.760    37.241    mmcm0/clk_vga_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.091    37.332 r  mmcm0/clkout2_buf/O
+                         net (fo=8, unplaced)         0.439    37.771    memory/memory/clk_vga
+                         RAMB36E1                                     r  memory/memory/VRAM_reg_0/CLKBWRCLK
+                         clock pessimism              0.481    38.251    
+                         clock uncertainty           -0.211    38.040    
+                         RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[7])
+                                                     -0.566    37.474    memory/memory/VRAM_reg_0
+  -------------------------------------------------------------------
+                         required time                         37.474    
+                         arrival time                         -20.814    
+  -------------------------------------------------------------------
+                         slack                                 16.660    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             19.978ns  (arrival time - required time)
+  Source:                 vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Destination:            memory/memory/VRAM_reg_0/ADDRBWRADDR[10]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_vga_design_1_clk_wiz_0_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk_vga_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -20.000ns  (clk_vga_design_1_clk_wiz_0_0 rise@0.000ns - clk_vga_inv_design_1_clk_wiz_0_0 rise@20.000ns)
+  Data Path Delay:        0.484ns  (logic 0.147ns (30.366%)  route 0.337ns (69.634%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.166ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -1.062ns
+    Source Clock Delay      (SCD):    -0.927ns = ( 19.073 - 20.000 ) 
+    Clock Pessimism Removal (CPR):    -0.301ns
+  Clock Uncertainty:      0.211ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.168ns
+    Phase Error              (PE):    0.120ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     20.000    20.000 r  
+    Y9                                                0.000    20.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    20.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.258    20.258 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.114    20.372    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -1.776    18.596 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.337    18.933    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.026    18.959 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.114    19.073    vga_cntrl_inst/svga_t_g/clk_vga_inv
+                         FDRE                                         r  vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.147    19.220 r  vga_cntrl_inst/svga_t_g/LINE_COUNT_reg[4]/Q
+                         net (fo=16, unplaced)        0.337    19.557    memory/memory/vaddr[9]
+                         RAMB36E1                                     r  memory/memory/VRAM_reg_0/ADDRBWRADDR[10]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_vga_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000     0.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.446     0.446 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.259     0.705    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.410    -1.705 r  mmcm0/mmcm_adv_inst/CLKOUT1
+                         net (fo=1, unplaced)         0.355    -1.350    mmcm0/clk_vga_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.029    -1.321 r  mmcm0/clkout2_buf/O
+                         net (fo=8, unplaced)         0.259    -1.062    memory/memory/clk_vga
+                         RAMB36E1                                     r  memory/memory/VRAM_reg_0/CLKBWRCLK
+                         clock pessimism              0.301    -0.761    
+                         clock uncertainty            0.211    -0.550    
+                         RAMB36E1 (Hold_ramb36e1_CLKBWRCLK_ADDRBWRADDR[10])
+                                                      0.129    -0.421    memory/memory/VRAM_reg_0
+  -------------------------------------------------------------------
+                         required time                          0.421    
+                         arrival time                          19.557    
+  -------------------------------------------------------------------
+                         slack                                 19.978    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_vga_design_1_clk_wiz_0_0
+  To Clock:  clk_vga_inv_design_1_clk_wiz_0_0
+
+Setup :            0  Failing Endpoints,  Worst Slack       16.307ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack       20.461ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             16.307ns  (required time - arrival time)
+  Source:                 memory/memory/VRAM_reg_0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_vga_design_1_clk_wiz_0_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Path Group:             clk_vga_inv_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_vga_inv_design_1_clk_wiz_0_0 rise@20.000ns - clk_vga_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        3.254ns  (logic 2.454ns (75.422%)  route 0.800ns (24.579%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.195ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.229ns = ( 17.771 - 20.000 ) 
+    Source Clock Delay      (SCD):    -1.554ns
+    Clock Pessimism Removal (CPR):    0.481ns
+  Clock Uncertainty:      0.211ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.168ns
+    Phase Error              (PE):    0.120ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_vga_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000     0.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.490     1.490 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.584     2.074    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -5.113    -3.038 r  mmcm0/mmcm_adv_inst/CLKOUT1
+                         net (fo=1, unplaced)         0.800    -2.239    mmcm0/clk_vga_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.101    -2.138 r  mmcm0/clkout2_buf/O
+                         net (fo=8, unplaced)         0.584    -1.554    memory/memory/clk_vga
+                         RAMB36E1                                     r  memory/memory/VRAM_reg_0/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+                         RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      2.454     0.900 r  memory/memory/VRAM_reg_0/DOBDO[1]
+                         net (fo=1, unplaced)         0.800     1.700    vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/vout[0]
+                         FDRE                                         r  vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     20.000    20.000 f  
+    Y9                                                0.000    20.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    20.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.420    21.420 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.439    21.859    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -5.378    16.481 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.760    17.241    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.091    17.332 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.439    17.771    vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/clk_vga_inv
+                         FDRE                                         r  vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]/C
+                         clock pessimism              0.481    18.251    
+                         clock uncertainty           -0.211    18.040    
+                         FDRE (Setup_fdre_C_D)       -0.033    18.007    vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]
+  -------------------------------------------------------------------
+                         required time                         18.007    
+                         arrival time                          -1.700    
+  -------------------------------------------------------------------
+                         slack                                 16.307    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             20.461ns  (arrival time - required time)
+  Source:                 memory/memory/VRAM_reg_0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_vga_design_1_clk_wiz_0_0  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_vga_inv_design_1_clk_wiz_0_0  {rise@20.000ns fall@40.000ns period=40.000ns})
+  Path Group:             clk_vga_inv_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -20.000ns  (clk_vga_inv_design_1_clk_wiz_0_0 rise@20.000ns - clk_vga_design_1_clk_wiz_0_0 rise@40.000ns)
+  Data Path Delay:        0.922ns  (logic 0.585ns (63.442%)  route 0.337ns (36.558%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.166ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -1.062ns = ( 18.938 - 20.000 ) 
+    Source Clock Delay      (SCD):    -0.927ns = ( 39.073 - 40.000 ) 
+    Clock Pessimism Removal (CPR):    -0.301ns
+  Clock Uncertainty:      0.211ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.168ns
+    Phase Error              (PE):    0.120ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_vga_design_1_clk_wiz_0_0 rise edge)
+                                                     40.000    40.000 r  
+    Y9                                                0.000    40.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    40.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.258    40.258 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.114    40.372    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -1.776    38.596 r  mmcm0/mmcm_adv_inst/CLKOUT1
+                         net (fo=1, unplaced)         0.337    38.933    mmcm0/clk_vga_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.026    38.959 r  mmcm0/clkout2_buf/O
+                         net (fo=8, unplaced)         0.114    39.073    memory/memory/clk_vga
+                         RAMB36E1                                     r  memory/memory/VRAM_reg_0/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+                         RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[1])
+                                                      0.585    39.658 r  memory/memory/VRAM_reg_0/DOBDO[1]
+                         net (fo=1, unplaced)         0.337    39.995    vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/vout[0]
+                         FDRE                                         r  vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_vga_inv_design_1_clk_wiz_0_0 rise edge)
+                                                     20.000    20.000 f  
+    Y9                                                0.000    20.000 f  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    20.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         0.446    20.446 f  mmcm0/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.259    20.705    mmcm0/clk_in1_design_1_clk_wiz_0_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1B)
+                                                     -2.410    18.295 r  mmcm0/mmcm_adv_inst/CLKOUT1B
+                         net (fo=1, unplaced)         0.355    18.650    mmcm0/clk_vga_inv_design_1_clk_wiz_0_0
+                         BUFG (Prop_bufg_I_O)         0.029    18.679 r  mmcm0/clkout3_buf/O
+                         net (fo=42, unplaced)        0.259    18.938    vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/clk_vga_inv
+                         FDRE                                         r  vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]/C
+                         clock pessimism              0.301    19.239    
+                         clock uncertainty            0.211    19.450    
+                         FDRE (Hold_fdre_C_D)         0.084    19.534    vga_cntrl_inst/v_out_inst/VGA_OUT_BLUE_reg/state_reg[0]
+  -------------------------------------------------------------------
+                         required time                        -19.534    
+                         arrival time                          39.995    
+  -------------------------------------------------------------------
+                         slack                                 20.461    
+
+
+
+
+

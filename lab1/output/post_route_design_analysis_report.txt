@@ -1,0 +1,64 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Thu Jan 20 21:45:26 2022
+| Host         : big16.seas.upenn.edu running 64-bit openSUSE Leap 15.3
+| Command      : report_design_analysis -file ./output/post_route_design_analysis_report.txt
+| Design       : rca4
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------
+
+Report Design Analysis
+
+Table of Contents
+-----------------
+1. Setup Path Characteristics 1-1
+2. Logic Level Distribution
+
+1. Setup Path Characteristics 1-1
+---------------------------------
+
++---------------------------+------------------+
+|      Characteristics      |      Path #1     |
++---------------------------+------------------+
+| Requirement               |            0.000 |
+| Path Delay                |           11.588 |
+| Logic Delay               | 5.108(45%)       |
+| Net Delay                 | 6.480(55%)       |
+| Clock Skew                |            0.000 |
+| Slack                     |              inf |
+| Clock Relationship        | Safely Timed     |
+| Logic Levels              |                3 |
+| Routes                    |                2 |
+| Logical Path              | IBUF LUT5 OBUF   |
+| Start Point Clock         | input port clock |
+| End Point Clock           |                  |
+| DSP Block                 | None             |
+| BRAM                      | None             |
+| IO Crossings              |                5 |
+| Config Crossings          |                0 |
+| SLR Crossings             |                0 |
+| PBlocks                   |                0 |
+| High Fanout               |                2 |
+| Dont Touch                |                0 |
+| Mark Debug                |                0 |
+| Start Point Pin Primitive | SWITCH[6]        |
+| End Point Pin Primitive   | LED[3]           |
+| Start Point Pin           | SWITCH[6]        |
+| End Point Pin             | LED[3]           |
++---------------------------+------------------+
+* Bounding box calculated as % of dimensions for the target device (308, 299)
+
+
+2. Logic Level Distribution
+---------------------------
+
++-----------------+-------------+---+
+| End Point Clock | Requirement | 3 |
++-----------------+-------------+---+
+|                 | 0.000ns     | 4 |
++-----------------+-------------+---+
+* Columns represents the logic levels per end point clock
+** Distribution is for top worst 4 paths
+
+

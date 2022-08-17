@@ -1,0 +1,317 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date             : Mon Apr 25 21:51:45 2022
+| Host             : big09.seas.upenn.edu running 64-bit openSUSE Leap 15.3
+| Command          : report_power -file ./output/post_route_power_report.txt
+| Design           : lc4_system
+| Device           : xc7z020clg484-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.256        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.146        |
+| Device Static (W)        | 0.110        |
+| Effective TJA (C/W)      | 11.5         |
+| Max Ambient (C)          | 82.0         |
+| Junction Temperature (C) | 28.0         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.002 |        7 |       --- |             --- |
+| Slice Logic             |     0.004 |     4785 |       --- |             --- |
+|   LUT as Logic          |     0.004 |     3066 |     53200 |            5.76 |
+|   CARRY4                |    <0.001 |      220 |     13300 |            1.65 |
+|   Register              |    <0.001 |      760 |    106400 |            0.71 |
+|   F7/F8 Muxes           |    <0.001 |       65 |     53200 |            0.12 |
+|   LUT as Shift Register |    <0.001 |        2 |     17400 |            0.01 |
+|   Others                |     0.000 |      172 |       --- |             --- |
+| Signals                 |     0.006 |     3641 |       --- |             --- |
+| Block RAM               |     0.010 |     39.5 |       140 |           28.21 |
+| MMCM                    |     0.122 |        1 |         4 |           25.00 |
+| DSPs                    |    <0.001 |        2 |       220 |            0.91 |
+| I/O                     |     0.001 |       29 |       200 |           14.50 |
+| Static Power            |     0.110 |          |           |                 |
+| Total                   |     0.256 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.030 |       0.022 |      0.009 |
+| Vccaux    |       1.800 |     0.078 |       0.068 |      0.011 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.003 |       0.001 |      0.002 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 |
+| Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio1 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++------------------------------------+------------------------------------------+-----------------+
+| Clock                              | Domain                                   | Constraint (ns) |
++------------------------------------+------------------------------------------+-----------------+
+| CLOCK_100MHz                       | CLOCK_100MHz                             |            10.0 |
+| clk_processor_design_1_clk_wiz_0_0 | mmcm0/clk_processor_design_1_clk_wiz_0_0 |            57.2 |
+| clk_vga_design_1_clk_wiz_0_0       | mmcm0/clk_vga_design_1_clk_wiz_0_0       |            40.0 |
+| clk_vga_inv_design_1_clk_wiz_0_0   | mmcm0/clk_vga_inv_design_1_clk_wiz_0_0   |            40.0 |
+| clkfbout_design_1_clk_wiz_0_0      | mmcm0/clkfbout_design_1_clk_wiz_0_0      |            10.0 |
++------------------------------------+------------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-------------------------------------------+-----------+
+| Name                                      | Power (W) |
++-------------------------------------------+-----------+
+| lc4_system                                |     0.146 |
+|   fake_kbd_inst                           |    <0.001 |
+|     kbdr_reg                              |    <0.001 |
+|     kbsr_reg                              |    <0.001 |
+|     op_c                                  |    <0.001 |
+|       state_reg                           |    <0.001 |
+|     op_d                                  |    <0.001 |
+|       state_reg                           |    <0.001 |
+|     op_l                                  |    <0.001 |
+|       state_reg                           |    <0.001 |
+|     op_r                                  |    <0.001 |
+|       state_reg                           |    <0.001 |
+|     op_u                                  |    <0.001 |
+|       state_reg                           |    <0.001 |
+|   gwe_cleaner                             |    <0.001 |
+|   memory                                  |     0.011 |
+|     memory                                |     0.011 |
+|       i1out_reg                           |    <0.001 |
+|       i2out_reg                           |    <0.001 |
+|   mmcm0                                   |     0.123 |
+|   proc_inst                               |     0.010 |
+|     alu_A                                 |    <0.001 |
+|       div                                 |    <0.001 |
+|         genblk1[0].div                    |    <0.001 |
+|         genblk1[10].div                   |    <0.001 |
+|         genblk1[11].div                   |    <0.001 |
+|         genblk1[12].div                   |    <0.001 |
+|         genblk1[13].div                   |    <0.001 |
+|         genblk1[14].div                   |    <0.001 |
+|         genblk1[15].div                   |    <0.001 |
+|         genblk1[1].div                    |    <0.001 |
+|         genblk1[2].div                    |    <0.001 |
+|         genblk1[3].div                    |    <0.001 |
+|         genblk1[4].div                    |    <0.001 |
+|         genblk1[5].div                    |    <0.001 |
+|         genblk1[6].div                    |    <0.001 |
+|         genblk1[7].div                    |    <0.001 |
+|         genblk1[8].div                    |    <0.001 |
+|         genblk1[9].div                    |    <0.001 |
+|     alu_B                                 |     0.002 |
+|       div                                 |     0.002 |
+|         genblk1[0].div                    |    <0.001 |
+|         genblk1[10].div                   |    <0.001 |
+|         genblk1[11].div                   |    <0.001 |
+|         genblk1[12].div                   |    <0.001 |
+|         genblk1[13].div                   |    <0.001 |
+|         genblk1[14].div                   |    <0.001 |
+|         genblk1[15].div                   |    <0.001 |
+|         genblk1[1].div                    |    <0.001 |
+|         genblk1[2].div                    |    <0.001 |
+|         genblk1[3].div                    |    <0.001 |
+|         genblk1[4].div                    |    <0.001 |
+|         genblk1[5].div                    |    <0.001 |
+|         genblk1[6].div                    |    <0.001 |
+|         genblk1[7].div                    |    <0.001 |
+|         genblk1[8].div                    |    <0.001 |
+|         genblk1[9].div                    |    <0.001 |
+|     decode_instruction_register_A         |    <0.001 |
+|     decode_instruction_register_B         |    <0.001 |
+|     decode_pc_plus_one_register_A         |    <0.001 |
+|     decode_pc_plus_one_register_B         |    <0.001 |
+|     decode_pc_register_A                  |    <0.001 |
+|     decode_pc_register_B                  |    <0.001 |
+|     execute_alu_rs_register_A             |    <0.001 |
+|     execute_alu_rs_register_B             |    <0.001 |
+|     execute_alu_rt_register_A             |    <0.001 |
+|     execute_alu_rt_register_B             |    <0.001 |
+|     execute_instruction_register_A        |    <0.001 |
+|     execute_instruction_register_B        |    <0.001 |
+|     execute_is_branch_register_A          |    <0.001 |
+|     execute_is_branch_register_B          |    <0.001 |
+|     execute_is_control_insn_register_A    |    <0.001 |
+|     execute_is_control_insn_register_B    |    <0.001 |
+|     execute_is_load_register_A            |    <0.001 |
+|     execute_is_load_register_B            |    <0.001 |
+|     execute_is_store_register_A           |    <0.001 |
+|     execute_is_store_register_B           |    <0.001 |
+|     execute_nzp_we_register_A             |    <0.001 |
+|     execute_nzp_we_register_B             |    <0.001 |
+|     execute_pc_plus_one_register_A        |    <0.001 |
+|     execute_pc_plus_one_register_B        |    <0.001 |
+|     execute_pc_register_A                 |    <0.001 |
+|     execute_pc_register_B                 |    <0.001 |
+|     execute_r1sel_register_A              |    <0.001 |
+|     execute_r1sel_register_B              |    <0.001 |
+|     execute_r2sel_register_A              |    <0.001 |
+|     execute_r2sel_register_B              |     0.002 |
+|     execute_register_file_we_register_A   |    <0.001 |
+|     execute_register_file_we_register_B   |    <0.001 |
+|     execute_select_pc_plus_one_register_A |    <0.001 |
+|     execute_select_pc_plus_one_register_B |    <0.001 |
+|     execute_wsel_register_A               |    <0.001 |
+|     execute_wsel_register_B               |    <0.001 |
+|     memory_B_register_A                   |    <0.001 |
+|     memory_B_register_B                   |    <0.001 |
+|     memory_O_register_A                   |    <0.001 |
+|     memory_O_register_B                   |    <0.001 |
+|     memory_is_load_register_A             |    <0.001 |
+|     memory_is_load_register_B             |    <0.001 |
+|     memory_is_store_register_A            |    <0.001 |
+|     memory_is_store_register_B            |    <0.001 |
+|     memory_nzp_register_A                 |    <0.001 |
+|     memory_nzp_register_B                 |    <0.001 |
+|     memory_nzp_we_register_A              |    <0.001 |
+|     memory_nzp_we_register_B              |    <0.001 |
+|     memory_r2sel_register_A               |    <0.001 |
+|     memory_r2sel_register_B               |    <0.001 |
+|     memory_register_file_we_register_A    |    <0.001 |
+|     memory_register_file_we_register_B    |    <0.001 |
+|     memory_wsel_register_A                |    <0.001 |
+|     memory_wsel_register_B                |    <0.001 |
+|     nzp_register                          |    <0.001 |
+|     pc_reg                                |    <0.001 |
+|     regfile                               |    <0.001 |
+|       r0                                  |    <0.001 |
+|         register                          |    <0.001 |
+|       r1                                  |    <0.001 |
+|         register                          |    <0.001 |
+|       r2                                  |    <0.001 |
+|         register                          |    <0.001 |
+|       r3                                  |    <0.001 |
+|         register                          |    <0.001 |
+|       r4                                  |    <0.001 |
+|         register                          |    <0.001 |
+|       r5                                  |    <0.001 |
+|         register                          |    <0.001 |
+|       r6                                  |    <0.001 |
+|         register                          |    <0.001 |
+|       r7                                  |    <0.001 |
+|         register                          |    <0.001 |
+|     writeback_D_register_A                |     0.003 |
+|     writeback_O_register_A                |    <0.001 |
+|     writeback_O_register_B                |    <0.001 |
+|     writeback_is_load_register_A          |    <0.001 |
+|     writeback_is_load_register_B          |    <0.001 |
+|     writeback_nzp_register_A              |    <0.001 |
+|     writeback_nzp_register_B              |    <0.001 |
+|     writeback_nzp_we_register_A           |    <0.001 |
+|     writeback_nzp_we_register_B           |    <0.001 |
+|     writeback_register_file_we_register_A |    <0.001 |
+|     writeback_register_file_we_register_B |    <0.001 |
+|     writeback_wsel_register_A             |    <0.001 |
+|     writeback_wsel_register_B             |    <0.001 |
+|   timer                                   |    <0.001 |
+|     counter_reg                           |    <0.001 |
+|     interval_reg                          |    <0.001 |
+|   vga_cntrl_inst                          |    <0.001 |
+|     svga_t_g                              |    <0.001 |
+|     v_out_inst                            |    <0.001 |
+|       VGA_HSYNCH_reg                      |    <0.001 |
+|       VGA_OUT_BLUE_reg                    |    <0.001 |
+|       VGA_OUT_GREEN_reg                   |    <0.001 |
+|       VGA_OUT_RED_reg                     |    <0.001 |
+|       VGA_VSYNCH_reg                      |    <0.001 |
+|   we_gen                                  |    <0.001 |
+|     global_we_count                       |    <0.001 |
++-------------------------------------------+-----------+
+
+

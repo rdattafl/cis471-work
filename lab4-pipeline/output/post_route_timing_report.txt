@@ -1,0 +1,236 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Fri Apr  1 19:12:39 2022
+| Host         : big23.seas.upenn.edu running 64-bit openSUSE Leap 15.3
+| Command      : report_timing -file ./output/post_route_timing_report.txt
+| Design       : lc4_system
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.099ns  (required time - arrival time)
+  Source:                 proc_inst/memory_wsel_register/state_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_processor_design_1_clk_wiz_0_0  {rise@0.000ns fall@28.625ns period=57.250ns})
+  Destination:            proc_inst/memory_nzp_register/state_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_processor_design_1_clk_wiz_0_0  {rise@0.000ns fall@28.625ns period=57.250ns})
+  Path Group:             clk_processor_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            57.250ns  (clk_processor_design_1_clk_wiz_0_0 rise@57.250ns - clk_processor_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        56.016ns  (logic 15.092ns (26.942%)  route 40.924ns (73.058%))
+  Logic Levels:           67  (CARRY4=26 LUT2=1 LUT3=3 LUT4=2 LUT5=11 LUT6=24)
+  Clock Path Skew:        -0.068ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.591ns = ( 55.659 - 57.250 ) 
+    Source Clock Delay      (SCD):    -0.947ns
+    Clock Pessimism Removal (CPR):    0.577ns
+  Clock Uncertainty:      0.097ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.180ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_processor_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000     0.000    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.490     1.490 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, routed)           1.285     2.775    mmcm0/clk_in1_design_1_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.343    -4.568 r  mmcm0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.855    -2.713    mmcm0/clk_processor_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101    -2.612 r  mmcm0/clkout1_buf/O
+                         net (fo=563, routed)         1.665    -0.947    proc_inst/memory_wsel_register/clk_processor
+    SLICE_X44Y43         FDRE                                         r  proc_inst/memory_wsel_register/state_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y43         FDRE (Prop_fdre_C_Q)         0.456    -0.491 r  proc_inst/memory_wsel_register/state_reg[0]/Q
+                         net (fo=3, routed)           0.875     0.385    proc_inst/execute_r2sel_register/memory_wsel[0]
+    SLICE_X45Y43         LUT6 (Prop_lut6_I1_O)        0.124     0.509 r  proc_inst/execute_r2sel_register/mul_out_i_37/O
+                         net (fo=1, routed)           0.433     0.942    proc_inst/execute_r2sel_register/possibly_bypassed_alu_input_B2
+    SLICE_X45Y42         LUT2 (Prop_lut2_I0_O)        0.124     1.066 r  proc_inst/execute_r2sel_register/mul_out_i_34/O
+                         net (fo=16, routed)          0.543     1.609    proc_inst/execute_r2sel_register/possibly_bypassed_alu_input_B1
+    SLICE_X40Y41         LUT6 (Prop_lut6_I3_O)        0.124     1.733 r  proc_inst/execute_r2sel_register/mul_out_i_16/O
+                         net (fo=54, routed)          1.142     2.875    proc_inst/execute_r2sel_register/possibly_bypassed_alu_input_B[0]
+    SLICE_X43Y32         LUT3 (Prop_lut3_I2_O)        0.124     2.999 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_5__14/O
+                         net (fo=1, routed)           0.000     2.999    proc_inst/alu/div/genblk1[0].div/S[0]
+    SLICE_X43Y32         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     3.531 r  proc_inst/alu/div/genblk1[0].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000     3.531    proc_inst/alu/div/genblk1[0].div/o_remainder1_carry_n_0
+    SLICE_X43Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.645 r  proc_inst/alu/div/genblk1[0].div/o_remainder1_carry__0/CO[3]
+                         net (fo=99, routed)          0.995     4.640    proc_inst/execute_r2sel_register/CO[0]
+    SLICE_X38Y36         LUT5 (Prop_lut5_I1_O)        0.124     4.764 r  proc_inst/execute_r2sel_register/o_remainder0_carry_i_3/O
+                         net (fo=2, routed)           0.487     5.251    proc_inst/alu/div/genblk1[1].div/remainders[1]_12[0]
+    SLICE_X41Y35         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507     5.758 r  proc_inst/alu/div/genblk1[1].div/o_remainder0_carry/CO[3]
+                         net (fo=1, routed)           0.000     5.758    proc_inst/alu/div/genblk1[1].div/o_remainder0_carry_n_0
+    SLICE_X41Y36         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     6.071 r  proc_inst/alu/div/genblk1[1].div/o_remainder0_carry__0/O[3]
+                         net (fo=5, routed)           0.879     6.950    proc_inst/execute_r2sel_register/o_remainder0_1[7]
+    SLICE_X39Y37         LUT4 (Prop_lut4_I0_O)        0.306     7.256 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_16__0/O
+                         net (fo=6, routed)           0.697     7.953    proc_inst/execute_r2sel_register/alu/div/remainders[2]_11[7]
+    SLICE_X39Y37         LUT4 (Prop_lut4_I2_O)        0.124     8.077 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_4__6/O
+                         net (fo=1, routed)           0.614     8.691    proc_inst/alu/div/genblk1[2].div/state_reg[0]_1[0]
+    SLICE_X39Y36         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.526     9.217 r  proc_inst/alu/div/genblk1[2].div/o_remainder1_carry__0/CO[3]
+                         net (fo=46, routed)          0.955    10.171    proc_inst/execute_r2sel_register/state_reg[0]_31[0]
+    SLICE_X43Y35         LUT6 (Prop_lut6_I1_O)        0.124    10.295 r  proc_inst/execute_r2sel_register/o_remainder0_carry__1_i_4__4/O
+                         net (fo=9, routed)           0.831    11.127    proc_inst/execute_r2sel_register/remainders[3]_10[6]
+    SLICE_X44Y40         LUT6 (Prop_lut6_I4_O)        0.124    11.251 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_4__5/O
+                         net (fo=1, routed)           0.548    11.798    proc_inst/alu/div/genblk1[3].div/state_reg[0]_1[0]
+    SLICE_X42Y40         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    12.348 r  proc_inst/alu/div/genblk1[3].div/o_remainder1_carry__0/CO[3]
+                         net (fo=70, routed)          1.219    13.567    proc_inst/execute_r2sel_register/state_reg[0]_32[0]
+    SLICE_X46Y37         LUT3 (Prop_lut3_I1_O)        0.116    13.683 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_11__1/O
+                         net (fo=6, routed)           0.626    14.309    proc_inst/execute_r2sel_register/alu/div/remainders[4]_9[8]
+    SLICE_X45Y40         LUT6 (Prop_lut6_I1_O)        0.328    14.637 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_4__4/O
+                         net (fo=1, routed)           0.477    15.114    proc_inst/alu/div/genblk1[4].div/state_reg[0]_1[0]
+    SLICE_X44Y39         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.526    15.640 r  proc_inst/alu/div/genblk1[4].div/o_remainder1_carry__0/CO[3]
+                         net (fo=56, routed)          0.939    16.579    proc_inst/execute_r2sel_register/state_reg[0]_40[0]
+    SLICE_X46Y39         LUT5 (Prop_lut5_I1_O)        0.124    16.703 r  proc_inst/execute_r2sel_register/o_remainder0_carry__1_i_3__2/O
+                         net (fo=8, routed)           0.687    17.391    proc_inst/execute_r2sel_register/state_reg[10]_1[7]
+    SLICE_X46Y39         LUT6 (Prop_lut6_I1_O)        0.124    17.515 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_4__3/O
+                         net (fo=1, routed)           0.568    18.083    proc_inst/alu/div/genblk1[5].div/state_reg[0]_1[0]
+    SLICE_X47Y39         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.526    18.609 r  proc_inst/alu/div/genblk1[5].div/o_remainder1_carry__0/CO[3]
+                         net (fo=60, routed)          1.007    19.615    proc_inst/execute_r2sel_register/state_reg[0]_33[0]
+    SLICE_X47Y36         LUT5 (Prop_lut5_I1_O)        0.124    19.739 r  proc_inst/execute_r2sel_register/o_remainder0_carry_i_2__4/O
+                         net (fo=3, routed)           0.720    20.459    proc_inst/execute_r2sel_register/state_reg[8]_2[0]
+    SLICE_X51Y39         LUT6 (Prop_lut6_I4_O)        0.124    20.583 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_3__5/O
+                         net (fo=1, routed)           0.345    20.928    proc_inst/alu/div/genblk1[6].div/state_reg[0][1]
+    SLICE_X49Y39         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507    21.435 r  proc_inst/alu/div/genblk1[6].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    21.435    proc_inst/alu/div/genblk1[6].div/o_remainder1_carry_n_0
+    SLICE_X49Y40         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    21.549 r  proc_inst/alu/div/genblk1[6].div/o_remainder1_carry__0/CO[3]
+                         net (fo=57, routed)          1.716    23.265    proc_inst/execute_r2sel_register/state_reg[0]_41[0]
+    SLICE_X54Y37         LUT3 (Prop_lut3_I1_O)        0.148    23.413 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_10__3/O
+                         net (fo=2, routed)           0.403    23.816    proc_inst/execute_r2sel_register/alu/div/remainders[7]_6[12]
+    SLICE_X53Y37         LUT6 (Prop_lut6_I1_O)        0.328    24.144 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_2__5/O
+                         net (fo=1, routed)           0.519    24.663    proc_inst/alu/div/genblk1[7].div/state_reg[0]_1[2]
+    SLICE_X52Y37         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    25.061 r  proc_inst/alu/div/genblk1[7].div/o_remainder1_carry__0/CO[3]
+                         net (fo=59, routed)          0.980    26.041    proc_inst/execute_r2sel_register/state_reg[0]_34[0]
+    SLICE_X50Y34         LUT5 (Prop_lut5_I1_O)        0.124    26.165 r  proc_inst/execute_r2sel_register/o_remainder0_carry_i_1__5/O
+                         net (fo=9, routed)           0.833    26.998    proc_inst/execute_r2sel_register/state_reg[6]_2[1]
+    SLICE_X57Y34         LUT6 (Prop_lut6_I1_O)        0.124    27.122 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_3__7/O
+                         net (fo=1, routed)           0.569    27.691    proc_inst/alu/div/genblk1[8].div/state_reg[0][1]
+    SLICE_X56Y34         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507    28.198 r  proc_inst/alu/div/genblk1[8].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    28.198    proc_inst/alu/div/genblk1[8].div/o_remainder1_carry_n_0
+    SLICE_X56Y35         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.312 r  proc_inst/alu/div/genblk1[8].div/o_remainder1_carry__0/CO[3]
+                         net (fo=55, routed)          1.188    29.500    proc_inst/execute_r2sel_register/state_reg[0]_42[0]
+    SLICE_X51Y33         LUT5 (Prop_lut5_I1_O)        0.124    29.624 r  proc_inst/execute_r2sel_register/o_remainder0_carry__0_i_3__5/O
+                         net (fo=9, routed)           0.736    30.360    proc_inst/execute_r2sel_register/state_reg[6]_0[3]
+    SLICE_X55Y33         LUT6 (Prop_lut6_I1_O)        0.124    30.484 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_2__8/O
+                         net (fo=1, routed)           0.621    31.106    proc_inst/alu/div/genblk1[9].div/state_reg[0][2]
+    SLICE_X54Y33         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.404    31.510 r  proc_inst/alu/div/genblk1[9].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    31.510    proc_inst/alu/div/genblk1[9].div/o_remainder1_carry_n_0
+    SLICE_X54Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    31.627 r  proc_inst/alu/div/genblk1[9].div/o_remainder1_carry__0/CO[3]
+                         net (fo=56, routed)          0.950    32.577    proc_inst/execute_r2sel_register/state_reg[0]_35[0]
+    SLICE_X54Y29         LUT5 (Prop_lut5_I1_O)        0.124    32.701 r  proc_inst/execute_r2sel_register/o_remainder0_carry__0_i_3__6/O
+                         net (fo=9, routed)           0.825    33.525    proc_inst/execute_r2sel_register/state_reg[5]_0[3]
+    SLICE_X53Y27         LUT6 (Prop_lut6_I1_O)        0.124    33.649 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_2__9/O
+                         net (fo=1, routed)           0.622    34.271    proc_inst/alu/div/genblk1[10].div/state_reg[0][2]
+    SLICE_X50Y29         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.404    34.675 r  proc_inst/alu/div/genblk1[10].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    34.675    proc_inst/alu/div/genblk1[10].div/o_remainder1_carry_n_0
+    SLICE_X50Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    34.792 r  proc_inst/alu/div/genblk1[10].div/o_remainder1_carry__0/CO[3]
+                         net (fo=58, routed)          0.968    35.760    proc_inst/execute_r2sel_register/state_reg[0]_36[0]
+    SLICE_X53Y30         LUT5 (Prop_lut5_I1_O)        0.124    35.884 r  proc_inst/execute_r2sel_register/o_remainder0_carry__1_i_3__5/O
+                         net (fo=10, routed)          0.588    36.473    proc_inst/execute_r2sel_register/remainders[11]_2[7]
+    SLICE_X54Y29         LUT6 (Prop_lut6_I1_O)        0.124    36.597 r  proc_inst/execute_r2sel_register/o_remainder1_carry__0_i_4__9/O
+                         net (fo=1, routed)           0.740    37.336    proc_inst/alu/div/genblk1[11].div/state_reg[0]_1[0]
+    SLICE_X53Y29         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.526    37.862 r  proc_inst/alu/div/genblk1[11].div/o_remainder1_carry__0/CO[3]
+                         net (fo=59, routed)          0.936    38.798    proc_inst/execute_r2sel_register/state_reg[0]_37[0]
+    SLICE_X50Y26         LUT5 (Prop_lut5_I1_O)        0.124    38.922 r  proc_inst/execute_r2sel_register/o_remainder0_carry_i_1__9/O
+                         net (fo=9, routed)           0.674    39.596    proc_inst/execute_r2sel_register/state_reg[3]_2[1]
+    SLICE_X50Y26         LUT6 (Prop_lut6_I1_O)        0.124    39.720 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_3__11/O
+                         net (fo=1, routed)           0.190    39.910    proc_inst/alu/div/genblk1[12].div/state_reg[0]_0[1]
+    SLICE_X51Y26         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.507    40.417 r  proc_inst/alu/div/genblk1[12].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    40.417    proc_inst/alu/div/genblk1[12].div/o_remainder1_carry_n_0
+    SLICE_X51Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    40.531 r  proc_inst/alu/div/genblk1[12].div/o_remainder1_carry__0/CO[3]
+                         net (fo=60, routed)          0.955    41.486    proc_inst/execute_r2sel_register/state_reg[0]_38[0]
+    SLICE_X49Y27         LUT5 (Prop_lut5_I1_O)        0.124    41.610 r  proc_inst/execute_r2sel_register/o_remainder0_carry__0_i_3__9/O
+                         net (fo=9, routed)           0.641    42.251    proc_inst/execute_r2sel_register/remainders[13]_0[3]
+    SLICE_X49Y27         LUT6 (Prop_lut6_I1_O)        0.124    42.375 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_2__12/O
+                         net (fo=1, routed)           0.625    43.000    proc_inst/alu/div/genblk1[13].div/state_reg[0][2]
+    SLICE_X47Y27         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    43.398 r  proc_inst/alu/div/genblk1[13].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    43.398    proc_inst/alu/div/genblk1[13].div/o_remainder1_carry_n_0
+    SLICE_X47Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    43.512 r  proc_inst/alu/div/genblk1[13].div/o_remainder1_carry__0/CO[3]
+                         net (fo=64, routed)          1.030    44.541    proc_inst/execute_r2sel_register/state_reg[0]_39[0]
+    SLICE_X47Y26         LUT5 (Prop_lut5_I1_O)        0.124    44.665 r  proc_inst/execute_r2sel_register/o_remainder0_carry__0_i_3__10/O
+                         net (fo=8, routed)           0.730    45.396    proc_inst/execute_r2sel_register/state_reg[0]_1[3]
+    SLICE_X45Y30         LUT6 (Prop_lut6_I1_O)        0.124    45.520 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_2__13/O
+                         net (fo=1, routed)           0.519    46.039    proc_inst/alu/div/genblk1[14].div/state_reg[0]_0[2]
+    SLICE_X44Y30         CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.398    46.437 r  proc_inst/alu/div/genblk1[14].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    46.437    proc_inst/alu/div/genblk1[14].div/o_remainder1_carry_n_0
+    SLICE_X44Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    46.551 r  proc_inst/alu/div/genblk1[14].div/o_remainder1_carry__0/CO[3]
+                         net (fo=56, routed)          1.123    47.674    proc_inst/execute_r2sel_register/state_reg[0]_28[0]
+    SLICE_X42Y25         LUT5 (Prop_lut5_I1_O)        0.124    47.798 r  proc_inst/execute_r2sel_register/o_remainder0_carry__0_i_1__10/O
+                         net (fo=4, routed)           0.704    48.502    proc_inst/execute_r2sel_register/remainders[15]_14[5]
+    SLICE_X42Y25         LUT6 (Prop_lut6_I1_O)        0.124    48.626 r  proc_inst/execute_r2sel_register/o_remainder1_carry_i_1__13/O
+                         net (fo=1, routed)           0.480    49.106    proc_inst/alu/div/genblk1[15].div/state_reg[0]_0[3]
+    SLICE_X44Y25         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    49.491 r  proc_inst/alu/div/genblk1[15].div/o_remainder1_carry/CO[3]
+                         net (fo=1, routed)           0.000    49.491    proc_inst/alu/div/genblk1[15].div/o_remainder1_carry_n_0
+    SLICE_X44Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    49.605 r  proc_inst/alu/div/genblk1[15].div/o_remainder1_carry__0/CO[3]
+                         net (fo=19, routed)          0.891    50.497    proc_inst/execute_r2sel_register/state_reg[0]_29[0]
+    SLICE_X42Y24         LUT6 (Prop_lut6_I1_O)        0.124    50.621 r  proc_inst/execute_r2sel_register/state[0]_i_19/O
+                         net (fo=1, routed)           0.447    51.068    proc_inst/execute_instruction_register/state_reg[4]_1
+    SLICE_X42Y22         LUT6 (Prop_lut6_I5_O)        0.124    51.192 r  proc_inst/execute_instruction_register/state[0]_i_12__0/O
+                         net (fo=1, routed)           0.625    51.817    proc_inst/execute_instruction_register/state[0]_i_12__0_n_0
+    SLICE_X40Y25         LUT6 (Prop_lut6_I0_O)        0.124    51.941 r  proc_inst/execute_instruction_register/state[0]_i_5/O
+                         net (fo=2, routed)           0.457    52.398    proc_inst/execute_instruction_register/state[0]_i_5_n_0
+    SLICE_X38Y25         LUT6 (Prop_lut6_I4_O)        0.124    52.522 r  proc_inst/execute_instruction_register/state[0]_i_2__1/O
+                         net (fo=1, routed)           0.419    52.941    proc_inst/execute_instruction_register/state[0]_i_2__1_n_0
+    SLICE_X36Y25         LUT6 (Prop_lut6_I1_O)        0.124    53.065 r  proc_inst/execute_instruction_register/state[0]_i_1__11/O
+                         net (fo=2, routed)           0.305    53.370    proc_inst/execute_instruction_register/state_reg[0]_0
+    SLICE_X39Y26         LUT6 (Prop_lut6_I5_O)        0.124    53.494 f  proc_inst/execute_instruction_register/state[1]_i_8__0/O
+                         net (fo=1, routed)           0.651    54.145    proc_inst/execute_instruction_register/state[1]_i_8__0_n_0
+    SLICE_X35Y30         LUT6 (Prop_lut6_I0_O)        0.124    54.269 r  proc_inst/execute_instruction_register/state[1]_i_5__0/O
+                         net (fo=2, routed)           0.676    54.945    proc_inst/execute_instruction_register/state[1]_i_5__0_n_0
+    SLICE_X35Y30         LUT6 (Prop_lut6_I0_O)        0.124    55.069 r  proc_inst/execute_instruction_register/state[0]_i_1__10/O
+                         net (fo=1, routed)           0.000    55.069    proc_inst/memory_nzp_register/execute_nzp_bits[0]
+    SLICE_X35Y30         FDRE                                         r  proc_inst/memory_nzp_register/state_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_processor_design_1_clk_wiz_0_0 rise edge)
+                                                     57.250    57.250 r  
+    Y9                                                0.000    57.250 r  CLOCK_100MHz (IN)
+                         net (fo=0)                   0.000    57.250    mmcm0/CLOCK_100MHz
+    Y9                   IBUF (Prop_ibuf_I_O)         1.420    58.670 r  mmcm0/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    59.832    mmcm0/clk_in1_design_1_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.438    52.394 r  mmcm0/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.691    54.085    mmcm0/clk_processor_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    54.176 r  mmcm0/clkout1_buf/O
+                         net (fo=563, routed)         1.482    55.659    proc_inst/memory_nzp_register/clk_processor
+    SLICE_X35Y30         FDRE                                         r  proc_inst/memory_nzp_register/state_reg[0]/C
+                         clock pessimism              0.577    56.235    
+                         clock uncertainty           -0.097    56.139    
+    SLICE_X35Y30         FDRE (Setup_fdre_C_D)        0.029    56.168    proc_inst/memory_nzp_register/state_reg[0]
+  -------------------------------------------------------------------
+                         required time                         56.168    
+                         arrival time                         -55.069    
+  -------------------------------------------------------------------
+                         slack                                  1.099    
+
+
+
+

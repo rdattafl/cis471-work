@@ -1,0 +1,39 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Thu Jan 20 21:45:26 2022
+| Host         : big16.seas.upenn.edu running 64-bit openSUSE Leap 15.3
+| Command      : report_timing -file ./output/post_route_timing_report.txt
+| Design       : rca4
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 SWITCH[6]
+                            (input port)
+  Destination:            LED[3]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.588ns  (logic 5.108ns (44.080%)  route 6.480ns (55.920%))
+  Logic Levels:           3  (IBUF=1 LUT5=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    H17                                               0.000     0.000 r  SWITCH[6] (IN)
+                         net (fo=0)                   0.000     0.000    SWITCH[6]
+    H17                  IBUF (Prop_ibuf_I_O)         1.454     1.454 r  SWITCH_IBUF[6]_inst/O
+                         net (fo=2, routed)           2.894     4.348    SWITCH_IBUF[6]
+    SLICE_X113Y101       LUT5 (Prop_lut5_I2_O)        0.124     4.472 r  LED_OBUF[3]_inst_i_1/O
+                         net (fo=1, routed)           3.586     8.058    LED_OBUF[3]
+    U21                  OBUF (Prop_obuf_I_O)         3.530    11.588 r  LED_OBUF[3]_inst/O
+                         net (fo=0)                   0.000    11.588    LED[3]
+    U21                                                               r  LED[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+

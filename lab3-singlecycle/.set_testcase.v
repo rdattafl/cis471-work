@@ -1,0 +1,6 @@
+`define INPUT_FILE "/Users/dattarij/Documents/ Folder/Classwork/ 2022/ 471/cis471-labs/lab3-singlecycle/test_data/wireframe.ctrace"
+`define OUTPUT_FILE "/Users/dattarij/Documents/ Folder/Classwork/ 2022/ 471/cis471-labs/lab3-singlecycle/test_data/wireframe.output"
+`define ORIG_INPUT_FILE "/Users/dattarij/Documents/ Folder/Classwork/ 2022/ 471/cis471-labs/lab3-singlecycle/test_data/wireframe.trace"
+`define MEMORY_IMAGE_FILE "/Users/dattarij/Documents/ Folder/Classwork/ 2022/ 471/cis471-labs/lab3-singlecycle/test_data/wireframe.hex"
+`define TEST_CASE "wireframe"
+`define VCD_FILE "wireframe.vcd"

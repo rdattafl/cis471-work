@@ -1,0 +1,58 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3855 (git sha1 54294957, clang 7.0.1 -fPIC -Os)
+
+
+-- Parsing `rca.v' using frontend `verilog' --
+
+1. Executing Verilog-2005 frontend: rca.v
+Parsing Verilog input from `rca.v' to AST representation.
+Generating RTLIL representation for module `\halfadder'.
+Generating RTLIL representation for module `\fulladder'.
+Generating RTLIL representation for module `\fulladder2'.
+Generating RTLIL representation for module `\rca4'.
+Successfully finished Verilog frontend.
+
+-- Running command `check; hierarchy -check; flatten; check -assert' --
+
+2. Executing CHECK pass (checking for obvious problems).
+Checking module rca4...
+Checking module fulladder2...
+Checking module fulladder...
+Checking module halfadder...
+Found and reported 0 problems.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing FLATTEN pass (flatten design).
+<suppressed ~6 debug messages>
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module rca4...
+Checking module fulladder2...
+Checking module fulladder...
+Checking module halfadder...
+Found and reported 0 problems.
+
+End of script. Logfile hash: 772a89ec3d, CPU: user 0.00s system 0.00s, MEM: 9.45 MB peak
+Yosys 0.9+3855 (git sha1 54294957, clang 7.0.1 -fPIC -Os)
+Time spent: 49% 1x flatten (0 sec), 29% 1x read_verilog (0 sec), ...
